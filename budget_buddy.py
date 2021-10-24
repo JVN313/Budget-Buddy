@@ -1,6 +1,6 @@
 print("WELCOME TO BUDGET BUDDY!")
 def Shopping_Mode():
-    budget =int(input("What is your budget for this shopping trip?\n"))
+    budget = float(input("What is your budget for this shopping trip?\n"))
 
     shopping_list = []
     prices = []
@@ -34,21 +34,22 @@ def Shopping_Mode():
         print("Thanks For Using Budget Buddy!")
 
 def SalesTax_Mode():
-    unit_price = float(input("Input  Price: "))
+    unit_price = float(input("Input Price: "))
     def tax_adding(price):
         sales_tax = price * 0.06
         true_total = price +  sales_tax
         print(round(true_total, 2))
 
     tax_adding(unit_price)
+    replay_options = ["YES","Y"]
     while True:
         replay = input("Would You Like To Input Another Price? ").upper()
-        if replay == "YES":
-          unit_price = float(input("Input  Price: "))
+        if replay in replay_options:
+          unit_price = float(input("Input Price: "))
           tax_adding(unit_price)
         else:
             print("Thanks For Using Budget Buddy!")
-            return False
+            break
 
 
 def Mode_Selector():
