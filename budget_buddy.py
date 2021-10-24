@@ -47,9 +47,9 @@ def SalesTax_Mode():
           unit_price = float(input("Input  Price: "))
           tax_adding(unit_price)
         else:
+            print("Thanks For Using Budget Buddy!")
             return False
-    
-    print("Thanks For Using Budget Buddy!")
+
 
 def Mode_Selector():
     options = ["A","SHOPPING MODE","SHOPPING","B","SALES TAX MODE","SALES TAX"]
