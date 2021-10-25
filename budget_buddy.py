@@ -1,6 +1,6 @@
 print("WELCOME TO BUDGET BUDDY!")
 def Shopping_Mode():
-    budget = float(input("What is your budget for this shopping trip?\n"))
+    budget = float(input("What is your budget for this shopping trip?\n$"))
 
     shopping_list = []
     prices = []
@@ -9,47 +9,76 @@ def Shopping_Mode():
         sales_tax= price * 0.06
         return sales_tax
 
+    def repeat_ShopMode():
+        repeat_SM_options = ["A","B","DONE","NO","N"]
+        user_responseSM = input("If You Would Like To Create A New Budget & Shopping List PRESS 'A'.\nIf You Would Like To Go Into SALES TAX MODE PRESS 'B'.\nOr TYPE 'DONE' To End The Program\n").upper()
+        
+        while user_responseSM not in repeat_SM_options:
+            print("INVALID RESPONSE")
+            user_responseSM = input("If You Would Like To Create A New Budget & Shopping List PRESS 'A'.\nIf You Would Like To Go Into SALES TAX MODE PRESS 'B'.\nOr TYPE 'DONE' To End The Program: \n").upper()
+        
+        if user_responseSM == "A":
+            Shopping_Mode()
+        elif user_responseSM == "B":
+            SalesTax_Mode()
+        elif user_responseSM == "DONE" or user_responseSM == "NO" or user_responseSM == "N":
+            print("Thanks For Using Budget Buddy!")
+            quit()
+
     filling_list =  True
     while filling_list:
         shopping_list.append(input("What's on your shopping list? (Type 'Done' When Finished Adding Items): ").upper())
         if "DONE" in shopping_list:
             shopping_list.pop()
             filling_list = False
+        
+        if shopping_list[-1] == "":
+            print("It Looks Like You Didn't Add An Item Correctly. Try Again")
+            shopping_list.pop()
+            continue
 
     for i in shopping_list:
-        prices.append(float(input(f"What does {i} cost? ")))
+        prices.append(float(input(f"What does {i} cost?: $")))
 
     prices_sum = sum(prices)
     shopping_total = round(prices_sum + tax(prices_sum), 2)
 
     if shopping_total >  budget:
-        print(f"You're Over Budget! by {round(shopping_total - budget, 2)}")
+        print(f"You're Over Budget! by ${round(shopping_total - budget, 2)}")
         most_expensiive = prices.index(max(prices))
-        print(f"Expected Shopping Total {shopping_total}")
+        print(f"Expected Shopping Total With Tax Total of ${round(tax(prices_sum), 2)} Is: ${shopping_total} / Without Tax: ${prices_sum}")
         print(f"Recommended Item Removal: {shopping_list[most_expensiive]}")
-        print("Thanks For Using Budget Buddy!")
+        repeat_ShopMode()
     elif budget >= shopping_total:
-        print(f"You're within your budget with {round(budget - shopping_total, 2)} left over.")
-        print(f"Expected Shopping Total {shopping_total}")
-        print("Thanks For Using Budget Buddy!")
+        print(f"You're within your budget with ${round(budget - shopping_total, 2)} left over.")
+        print(f"Expected Shopping Total With Tax Total of ${round(tax(prices_sum), 2)} Is: ${shopping_total} / Without Tax: ${prices_sum}")
+        repeat_ShopMode()
 
 def SalesTax_Mode():
-    unit_price = float(input("Input Price: "))
+    unit_price = float(input("Input Price: $"))
     def tax_adding(price):
         sales_tax = price * 0.06
         true_total = price +  sales_tax
-        print(round(true_total, 2))
+        print(f"Total Price With Tax: ${round(true_total, 2)}")
+
+    def repeat_SalesTaxMode():
+        repeat_STM_options = ["A","B","DONE","NO","N"]
+        user_responseSTM = input("If You Would Like Input Another Price PRESS 'A'.\nIf You Would Like To Go Into SHOPPING MODE PRESS 'B'.\nOr TYPE 'DONE' To End The Program\n").upper()
+        
+        while user_responseSTM not in repeat_STM_options:
+            print("INVALID RESPONSE")
+            user_responseSTM = input("If You Would Like To Create A New Budget & Shopping List PRESS 'A'.\nIf You Would Like To Go Into SALES TAX MODE PRESS 'B'.\nOr TYPE 'DONE' To End The Program: \n").upper()
+        
+        if user_responseSTM == "B":
+            Shopping_Mode()
+        elif user_responseSTM == "A":
+            SalesTax_Mode()
+        elif user_responseSTM == "DONE" or user_responseSTM == "NO" or user_responseSTM == "N":
+            print("Thanks For Using Budget Buddy!")
+            quit()
 
     tax_adding(unit_price)
-    replay_options = ["YES","Y"]
-    while True:
-        replay = input("Would You Like To Input Another Price? ").upper()
-        if replay in replay_options:
-          unit_price = float(input("Input Price: "))
-          tax_adding(unit_price)
-        else:
-            print("Thanks For Using Budget Buddy!")
-            break
+    repeat_SalesTaxMode()
 
 
 def Mode_Selector():
