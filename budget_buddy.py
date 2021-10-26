@@ -1,4 +1,4 @@
-print("WELCOME TO BUDGET BUDDY!")
+
 def Shopping_Mode():
     budget = float(input("What is your budget for this shopping trip?\n$"))
 
@@ -82,9 +82,10 @@ def SalesTax_Mode():
 
 
 def Mode_Selector():
-    options = ["A","SHOPPING MODE","SHOPPING","B","SALES TAX MODE","SALES TAX"]
+    print("WELCOME TO BUDGET BUDDY!")
+    options = ["A","SHOPPING MODE","SHOPPING","B","SALES TAX MODE","SALES TAX","SALES"]
     shopping_mode_options = ["A","SHOPPING MODE","SHOPPING"]
-    salestax_mode_options = ["SALES TAX MODE","SALES TAX","B"]
+    salestax_mode_options = ["SALES TAX MODE","SALES TAX","B","SALES"]
 
     user_input = input("Select Which Operating Mode You Would Like To Use:\nA) Shopping Mode\n In this mode, you tell Budget Buddy your budget and shopping list, including items and prices. Then it will get a total of your list plus tax and let you knoow if you're Over or Under Budget!\nB) Sales Tax Mode\n In this mode, you input an item price and Budget Buddy will give you the total plus tax\n").upper()
 
