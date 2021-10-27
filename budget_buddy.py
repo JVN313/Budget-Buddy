@@ -1,5 +1,7 @@
+import datetime
 
 def Shopping_Mode():
+    global shopping_list,prices
     budget = float(input("What is your budget for this shopping trip?\n$"))
 
     shopping_list = []
@@ -23,6 +25,7 @@ def Shopping_Mode():
             SalesTax_Mode()
         elif user_responseSM == "DONE" or user_responseSM == "NO" or user_responseSM == "N":
             print("Thanks For Using Budget Buddy!")
+            List_Saver()
             quit()
 
     filling_list =  True
@@ -80,6 +83,14 @@ def SalesTax_Mode():
     tax_adding(unit_price)
     repeat_SalesTaxMode()
 
+
+def List_Saver():
+    x = datetime.datetime.now()
+    date = f"{x.month}-{x.day}-{x.year}"
+    saved_list = dict(zip(shopping_list,prices))
+    saved_list_file = open(f"List-{date}.txt","w+")
+    saved_list_file.write(str(saved_list))
+    saved_list_file.close()
 
 def Mode_Selector():
     print("WELCOME TO BUDGET BUDDY!")
