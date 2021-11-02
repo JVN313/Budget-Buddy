@@ -1,0 +1,1 @@
+{'POP': 1.99, 'DOUGHNUTS': 2.0, 'ICE': 1.99, 'PAPER': 2.0}

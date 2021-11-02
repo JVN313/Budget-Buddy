@@ -54,7 +54,7 @@ def Shopping_Mode():
         repeat_ShopMode()
     elif budget >= shopping_total:
         print(f"You're within your budget with ${round(budget - shopping_total, 2)} left over.")
-        print(f"Expected Shopping Total With Tax Total of ${round(tax(prices_sum), 2)} Is: ${shopping_total} / Without Tax: ${prices_sum}")
+        print(f"Expected Shopping Total With Tax Total of ${round(tax(prices_sum), 2)} Is: ${shopping_total} / Without Tax: ${round(prices_sum, 2)}")
         repeat_ShopMode()
 
 def SalesTax_Mode():

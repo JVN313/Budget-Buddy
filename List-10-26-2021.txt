@@ -1,1 +1,1 @@
-{'POP': 1.99, 'MILK': 2.75, 'CHEEESE': 5.0, 'ICE': 0.99, 'BREAD': 3.0}
+{'POP': 1.99, 'MILK': 1.75, 'CHEESE': 3.0, 'ICE': 0.99, 'BREAD': 2.0}
