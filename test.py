@@ -1,8 +1,10 @@
 import datetime
 
-x = datetime.datetime.now()
-date = f"{x.month}-{x.day}-{x.year}"
+x = 2
+def plus_one(number):
+    number = number + 1
+    return number
 
-new_file = open(f"new{date}.txt","w")
-new_file.write("HI")
-new_file.close()
+plus_one(x)
+
+print(x)

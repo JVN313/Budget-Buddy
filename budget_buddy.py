@@ -88,7 +88,7 @@ def List_Saver():
     x = datetime.datetime.now()
     date = f"{x.month}-{x.day}-{x.year}"
     saved_list = dict(zip(shopping_list,prices))
-    saved_list_file = open(f"List-{date}.txt","w+")
+    saved_list_file = open(f"Lists/List-{date}.txt","w+")
     saved_list_file.write(str(saved_list))
     saved_list_file.close()
 
