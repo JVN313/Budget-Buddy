@@ -39,7 +39,8 @@ def Shopping_Mode():
             print("It Looks Like You Didn't Add An Item Correctly. Try Again")
             shopping_list.pop()
             continue
-
+    
+    #TODO FIX HERE ValueError
     for i in shopping_list:
         prices.append(float(input(f"What does {i} cost?: $")))
 

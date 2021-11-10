@@ -1,1 +1,1 @@
-{'POP': 1.99, 'ICE': 2.0, 'DOG FOOD': 4.5, 'FRUIT': 4.0, 'MILK': 3.0}
+{'POP': 2.0, 'MILK': 2.5, 'DOG FOOD': 10.0}

@@ -1,10 +1,10 @@
-import datetime
+def loan_mode():
+    mode_decision = ""
+    loan_amount = int(input("Enter Loan Amount: "))
+    monthly_payment = int(input("Desired Monthly Payment: "))
+    time_needed = loan_amount / monthly_payment
+    time_desired = int(input("How long would you like to pay off the loan?: "))
 
-x = 2
-def plus_one(number):
-    number = number + 1
-    return number
+    print()
 
-plus_one(x)
-
-print(x)
+loan_mode()
