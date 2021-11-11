@@ -1,8 +1,9 @@
 import datetime
+from string_test import String_Test
 
 def Shopping_Mode():
     global shopping_list,prices
-    budget = float(input("What is your budget for this shopping trip?\n$"))
+    budget = float(String_Test(input("What is your budget for this shopping trip?\n$")))
 
     shopping_list = []
     prices = []
@@ -40,9 +41,8 @@ def Shopping_Mode():
             shopping_list.pop()
             continue
     
-    #TODO FIX HERE ValueError
     for i in shopping_list:
-        prices.append(float(input(f"What does {i} cost?: $")))
+        prices.append(float(String_Test(input(f"What does {i} cost?: $"))))
 
     prices_sum = sum(prices)
     shopping_total = round(prices_sum + tax(prices_sum), 2)
@@ -59,7 +59,7 @@ def Shopping_Mode():
         repeat_ShopMode()
 
 def SalesTax_Mode():
-    unit_price = float(input("Input Price: $"))
+    unit_price = float(String_Test(input("Input Price: $")))
     def tax_adding(price):
         sales_tax = price * 0.06
         true_total = price +  sales_tax
@@ -87,7 +87,7 @@ def SalesTax_Mode():
 
 def List_Saver():
     x = datetime.datetime.now()
-    date = f"{x.month}-{x.day}-{x.year}"
+    date = f"{x.month}-{x.day}-{x.year}-{x.hour}.{x.minute}"
     saved_list = dict(zip(shopping_list,prices))
     saved_list_file = open(f"Lists/List-{date}.txt","w+")
     saved_list_file.write(str(saved_list))
