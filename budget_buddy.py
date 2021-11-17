@@ -2,6 +2,7 @@ import datetime
 from string_test import String_Test
 
 def Shopping_Mode():
+    global shopping_list, prices
     budget = float(String_Test(input("What is your budget for this shopping trip?\n$")))
 
     shopping_list = []
@@ -87,7 +88,7 @@ def SalesTax_Mode():
 def List_Saver():
     x = datetime.datetime.now()
     date = f"{x.month}-{x.day}-{x.year}-{x.hour}.{x.minute}"
-    saved_list = dict(zip(shopping_list,prices))
+    saved_list = dict(zip(shopping_list, prices))
     saved_list_file = open(f"Lists/List-{date}.txt","w+")
     saved_list_file.write(str(saved_list))
     saved_list_file.close()
