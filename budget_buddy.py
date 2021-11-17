@@ -2,6 +2,7 @@ import datetime
 from string_test import String_Test
 
 def Shopping_Mode():
+    global shopping_list, prices
     budget = float(String_Test(input("What is your budget for this shopping trip?\n$")))
 
     shopping_list = []
