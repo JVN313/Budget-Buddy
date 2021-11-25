@@ -1,5 +1,8 @@
 import datetime
 from string_test import String_Test
+from discount_cal import Discount_Cal
+
+#TODO add discount cal
 
 def Shopping_Mode():
     global shopping_list, prices
