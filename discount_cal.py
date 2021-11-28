@@ -20,5 +20,3 @@ def Discount_Cal():
 
     if rerun == "Y":
         Discount_Cal()
-
-Discount_Cal()

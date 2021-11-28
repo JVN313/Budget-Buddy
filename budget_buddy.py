@@ -98,19 +98,22 @@ def List_Saver():
 
 def Mode_Selector():
     print("WELCOME TO BUDGET BUDDY!")
-    options = ["A","SHOPPING MODE","SHOPPING","B","SALES TAX MODE","SALES TAX","SALES"]
+    options = ["A","SHOPPING MODE","SHOPPING","B","SALES TAX MODE","SALES TAX","SALES","C","DISCOUNT MODE","DISCOUNT"]
     shopping_mode_options = ["A","SHOPPING MODE","SHOPPING"]
     salestax_mode_options = ["SALES TAX MODE","SALES TAX","B","SALES"]
+    discount_mode_options = ["C","DISCOUNT MODE","DISCOUNT"]
 
-    user_input = input("Select Which Operating Mode You Would Like To Use:\nA) Shopping Mode\n In this mode, you tell Budget Buddy your budget and shopping list, including items and prices. Then it will get a total of your list plus tax and let you knoow if you're Over or Under Budget!\nB) Sales Tax Mode\n In this mode, you input an item price and Budget Buddy will give you the total plus tax\n").upper()
+    user_input = input("Select Which Operating Mode You Would Like To Use:\nA) Shopping Mode\n In this mode, you tell Budget Buddy your budget and shopping list, including items and prices. Then it will get a total of your list plus tax and let you knoow if you're Over or Under Budget!\nB) Sales Tax Mode\n In this mode, you input an item price and Budget Buddy will give you the total plus tax\nC) Discount Mode\n In this mode, you input an item price and discount percentage of the item, and Budget Buddy will give you the discounted price.\n").upper()
 
     while user_input not in options:
         print("NOT A VALID OPTION TRY AGAIN")
-        user_input = input("Select Which Operating Mode You Would Like To Use:\nA) Shopping Mode\n In this mode, you tell Budget Buddy your budget and shopping list, including items and prices. Then it will get a total of your list plus tax and let you knoow if you're Over or Under Budget!\nB) Sales Tax Mode\nIn this mode, you input an item price and Budget Buddy will give you the total plus tax\n").upper()
+        user_input = input("Select Which Operating Mode You Would Like To Use:\nA) Shopping Mode\n In this mode, you tell Budget Buddy your budget and shopping list, including items and prices. Then it will get a total of your list plus tax and let you knoow if you're Over or Under Budget!\nB) Sales Tax Mode\n In this mode, you input an item price and Budget Buddy will give you the total plus tax\nC) Discount Mode\n In this mode, you input an item price and discount percentage of the item, and Budget Buddy will give you the discounted price.\n").upper()
 
     if user_input in shopping_mode_options:
         Shopping_Mode()
     elif user_input in salestax_mode_options:
         SalesTax_Mode()
+    elif user_input in discount_mode_options:
+        Discount_Cal()
 
 Mode_Selector()
