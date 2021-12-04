@@ -21,7 +21,7 @@ def Shopping_Mode():
         
         while user_responseSM not in repeat_SM_options:
             print("INVALID RESPONSE")
-            user_responseSM = input("If You Would Like To Create A New Budget & Shopping List PRESS 'A'.\nIf You Would Like To Go Into SALES TAX MODE PRESS 'B'.\nOr TYPE 'DONE' To End The Program: \n").upper()
+            user_responseSM = input("If You Would Like To Create A New Budget & Shopping List PRESS 'A'.\nIf You Would Like To Go Into SALES TAX MODE PRESS 'B'.\nIf You Would Like To Go Into DISCOUNT MODE PRESS 'C'.\nOr TYPE 'DONE' To End The Program: \n").upper()
         
         if user_responseSM == "A":
             Shopping_Mode()
@@ -73,8 +73,8 @@ def SalesTax_Mode():
         print(f"Total Price With Tax: ${round(true_total, 2)}")
 
     def repeat_SalesTaxMode():
-        repeat_STM_options = ["A","B","DONE","NO","N"]
-        user_responseSTM = input("If You Would Like Input Another Price PRESS 'A'.\nIf You Would Like To Go Into SHOPPING MODE PRESS 'B'.\nOr TYPE 'DONE' To End The Program\n").upper()
+        repeat_STM_options = ["A","B","C","DONE","NO","N"]
+        user_responseSTM = input("If You Would Like Input Another Price PRESS 'A'.\nIf You Would Like To Go Into SHOPPING MODE PRESS 'B'.\nIf You Would Like To Go Into DISCOUNT MODE PRESS 'C'.\nOr TYPE 'DONE' To End The Program\n").upper()
         
         while user_responseSTM not in repeat_STM_options:
             print("INVALID RESPONSE")
@@ -84,6 +84,8 @@ def SalesTax_Mode():
             Shopping_Mode()
         elif user_responseSTM == "A":
             SalesTax_Mode()
+        elif user_responseSTM == "C":
+            Discount_Cal()
         elif user_responseSTM == "DONE" or user_responseSTM == "NO" or user_responseSTM == "N":
             print("Thanks For Using Budget Buddy!")
             quit()
