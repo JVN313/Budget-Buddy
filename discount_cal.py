@@ -9,7 +9,7 @@ def Discount_Cal():
     sale_price = round(price - discount_num, 2)
     new = list(str(sale_price))
 
-    if len(new) == 4:
+    if len(new) <= 4:
         new = "".join(new)
         new = new + "0"
         print(f"The discounted price is ${new}")

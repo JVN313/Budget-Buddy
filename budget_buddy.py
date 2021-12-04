@@ -16,8 +16,8 @@ def Shopping_Mode():
         return sales_tax
 
     def repeat_ShopMode():
-        repeat_SM_options = ["A","B","DONE","NO","N"]
-        user_responseSM = input("If You Would Like To Create A New Budget & Shopping List PRESS 'A'.\nIf You Would Like To Go Into SALES TAX MODE PRESS 'B'.\nOr TYPE 'DONE' To End The Program\n").upper()
+        repeat_SM_options = ["A","B","C","DONE","NO","N"]
+        user_responseSM = input("If You Would Like To Create A New Budget & Shopping List PRESS 'A'.\nIf You Would Like To Go Into SALES TAX MODE PRESS 'B'.\nIf You Would Like To Go Into DISCOUNT MODE PRESS 'C'.\nOr TYPE 'DONE' To End The Program\n").upper()
         
         while user_responseSM not in repeat_SM_options:
             print("INVALID RESPONSE")
@@ -26,7 +26,11 @@ def Shopping_Mode():
         if user_responseSM == "A":
             Shopping_Mode()
         elif user_responseSM == "B":
+            List_Saver()
             SalesTax_Mode()
+        elif user_responseSM == "C":
+            List_Saver()
+            Discount_Cal()
         elif user_responseSM == "DONE" or user_responseSM == "NO" or user_responseSM == "N":
             print("Thanks For Using Budget Buddy!")
             List_Saver()
@@ -86,7 +90,6 @@ def SalesTax_Mode():
 
     tax_adding(unit_price)
     repeat_SalesTaxMode()
-
 
 def List_Saver():
     x = datetime.datetime.now()
