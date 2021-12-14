@@ -6,7 +6,7 @@ def Number_Test(value):
 
     while check == True:
         print("not a number")
-        value = input("new num").upper()
+        value = input("Input New Number").upper()
         testing = list(value)
         check = any(item in test_list for item in testing)
         continue

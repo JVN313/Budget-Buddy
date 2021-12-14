@@ -17,6 +17,8 @@ def Discount_Cal():
         print(f"The discounted price is ${sale_price}")
 
     rerun = input("Would you like to find a new price?: ").upper()
+    rerun_options = ["YES","Y"]
 
-    if rerun == "Y":
+    if rerun in rerun_options:
         Discount_Cal()
+   
